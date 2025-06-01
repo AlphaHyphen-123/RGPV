@@ -3,12 +3,12 @@ import React, { useState } from "react";
 function UserCircle() {
   const [showInfo, setShowInfo] = useState(false);
 
-  // Get user info from localStorage
+  // 
   const user = JSON.parse(localStorage.getItem("user"));
 
-  if (!user) return null; // If no user, show nothing
+  if (!user) return null; // 
 
-  // Get initials like "AK" from "aditya kuymar"
+  
   const initials = user.name
     .split(" ")
     .map((word) => word[0].toUpperCase())
@@ -38,7 +38,7 @@ function UserCircle() {
         {initials}
       </div>
 
-      {/* Info box shown only when clicked */}
+      {/* */}
       {showInfo && (
         <div
           style={{

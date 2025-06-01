@@ -24,11 +24,11 @@ function Login() {
       const data = await res.json();
 
       if (res.ok) {
-        // Save full user info + token in localStorage
+        
         localStorage.setItem('user', JSON.stringify({ ...data.user, token: data.token }));
 
         alert('Login successful!');
-        navigate('/'); // redirect to dashboard or home
+        navigate('/'); 
       } else {
         alert(data.message || 'Login failed');
       }

@@ -4,7 +4,7 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 function Footer() {
   return (
     <footer style={{
-      backgroundColor: "#2832C2",   // blue backgr
+      backgroundColor: "#2832C2",   
       color: "white",
       padding: "20px 10px",
       textAlign: "center",

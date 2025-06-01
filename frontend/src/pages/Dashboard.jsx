@@ -1,7 +1,7 @@
 import React from "react";
 
 function Dashboard() {
-  // Get user info from localStorage
+  
   const user = JSON.parse(localStorage.getItem("user"));
 
   if (!user) {

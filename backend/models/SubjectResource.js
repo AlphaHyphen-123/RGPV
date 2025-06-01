@@ -11,7 +11,7 @@ const subjectResourceSchema = new mongoose.Schema({
   semesterWiseResources: [
     { semester: Number, notesUrl: String }
   ],
-  // Changed from array of strings to array of objects with name and link
+  
   playlistUrls: [
     {
       name: { type: String, required: true },

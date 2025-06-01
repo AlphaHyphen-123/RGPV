@@ -15,7 +15,7 @@ import About from "./pages/About";
 import Contact from "./components/Contact";
 function Layout({ children }) {
   const location = useLocation();
-  // Paths where Navbar/Footer should show
+  // 
   const showNavFooter = ["/", "/about", "/find-resource"].includes(location.pathname);
 
   return (

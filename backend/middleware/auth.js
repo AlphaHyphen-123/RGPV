@@ -11,7 +11,7 @@ const auth = (req, res, next) => {
 
   const token = authHeader.split(' ')[1];
 
-  try {
+  try { 
     const decoded = jwt.verify(token, secretKey);
     req.user = decoded; 
     next();

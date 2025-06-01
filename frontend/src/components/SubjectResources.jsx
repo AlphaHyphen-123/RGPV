@@ -10,13 +10,13 @@ function SubjectResources() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  // Function to fetch resources from backend
+  
   useEffect(() => {
     if (semester && branch && subject) {
       setLoading(true);
       setError(null);
 
-      // Example API URL, replace with your backend endpoint
+      // 
       const url = `/api/resources?semester=${semester}&branch=${branch}&subject=${encodeURIComponent(subject)}`;
 
       fetch(url)
@@ -25,8 +25,7 @@ function SubjectResources() {
           return res.json();
         })
         .then(data => {
-          // Assume data returned from backend is grouped like:
-          // { "Tutorial Link": [...], "YouTube Link": [...], ... }
+          
           setResources(data);
           setLoading(false);
         })
@@ -44,8 +43,8 @@ function SubjectResources() {
       <h2>Find Resources</h2>
 
       <div style={{ display: 'flex', gap: 10, marginBottom: 20, flexWrap: 'wrap' }}>
-        {/* Semester, Branch, Subject selectors (add your own options and handlers) */}
-        {/* ...same as before, omitted here for brevity */}
+        {/* Semester, Branch, Subject selectors) */}
+        {/*  */}
       </div>
 
       {loading && <p>Loading resources...</p>}

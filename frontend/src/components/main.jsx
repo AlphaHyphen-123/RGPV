@@ -18,7 +18,7 @@ const main = () => {
         {/* Box 1 */}
         <div className="col-lg-3 col-md-6 mb-4">
           <div className="bg-white rounded-4 p-4 h-100 shadow">
-            <h5 className="fw-bold">📚 Previous Year Questions</h5>
+            <h5 className="fw-bold">Previous Year Questions</h5>
             <ul className="list-unstyled mt-3">
               <li>Access semester-wise PYQs</li>
               <li>Covers all branches (CSE, ME, ECE, etc.)</li>
@@ -31,7 +31,7 @@ const main = () => {
         {/* Box 2 */}
         <div className="col-lg-3 col-md-6 mb-4">
           <div className="bg-white rounded-4 p-4 h-100 shadow">
-            <h5 className="fw-bold">📝 Notes & Study Material</h5>
+            <h5 className="fw-bold">Notes & Study Material</h5>
             <ul className="list-unstyled mt-3">
               <li>Chapter-wise notes</li>
               <li>Quick revision focused</li>
@@ -44,7 +44,7 @@ const main = () => {
         {/* Box 3 */}
         <div className="col-lg-3 col-md-6 mb-4">
           <div className="bg-white rounded-4 p-4 h-100 shadow">
-            <h5 className="fw-bold">🎥 Tutorials & YouTube Links</h5>
+            <h5 className="fw-bold"> Tutorials & YouTube Links</h5>
             <ul className="list-unstyled mt-3">
               <li>Best YouTube content</li>
               <li>Topic-wise playlist</li>
@@ -57,7 +57,7 @@ const main = () => {
         {/* Box 4 */}
         <div className="col-lg-3 col-md-6 mb-4">
           <div className="bg-white rounded-4 p-4 h-100 shadow">
-            <h5 className="fw-bold">🧠 Smart Search & Filters</h5>
+            <h5 className="fw-bold"> Smart Search & Filters</h5>
             <ul className="list-unstyled mt-3">
               <li>Search by subject or topic</li>
               <li>Instant results</li>
