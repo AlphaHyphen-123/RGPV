@@ -22,7 +22,7 @@ router.post('/upload', async (req, res) => {
     let existing = await SubjectResource.findOne({ subjectName });
 
     if (existing) {
-      // Merge arrays if they exist in the request body
+      
       if (Array.isArray(notesUrls)) existing.notesUrl.push(...notesUrls);
       if (pyqBookUrl) existing.pyqBookUrl = pyqBookUrl;
       if (Array.isArray(yearWisePYQs)) existing.yearWisePYQs.push(...yearWisePYQs);
@@ -34,7 +34,7 @@ router.post('/upload', async (req, res) => {
       return res.json({ message: 'Resource updated', resource: existing });
     }
 
-    // Create new resource if none exists
+  
     const newResource = new SubjectResource({
       subjectName,
       branch,
@@ -76,7 +76,7 @@ router.get("/", async (req, res) => {
 });
 
 
-// GET /api/resources/list?year=...&semester=...&branch=...
+
 router.get('/list', async (req, res) => {
   const { year, semester, branch } = req.query;
 
@@ -88,12 +88,8 @@ router.get('/list', async (req, res) => {
     // Find subjects matching the filters
     const subjects = await SubjectResource.find({
       branch,
-      // Assuming you want subjects related to the given year and semester,
-      // but since SubjectResource schema does not have year or semester directly,
-      // you might need to adjust your schema or logic here.
-
-      // For now, filter by branch only:
-    }).select('subjectName -_id'); // Just return subject names
+     
+    }).select('subjectName -_id'); 
 
     res.json({ subjects });
   } catch (err) {
@@ -109,15 +105,15 @@ router.get("/", async (req, res) => {
   }
 
   try {
-    console.log("🔍 Searching for subject:", subject); // Debug log
+    console.log(" Searching for subject:", subject); 
     const resource = await SubjectResource.findOne({ subjectName: subject });
 
     if (!resource) {
-      console.log("❌ Resource not found in DB!");
+      console.log(" Resource not found in DB!");
       return res.status(404).json({ error: "Resource not found" });
     }
 
-    console.log("✅ Found resource:", resource);
+    console.log("Found resource:", resource);
     res.json(resource);
   } catch (err) {
     console.error("Error fetching resource:", err);

@@ -13,7 +13,7 @@ const auth = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, secretKey);
-    req.user = decoded; // this sets req.user = { id, email, name }
+    req.user = decoded; 
     next();
   } catch (error) {
     return res.status(401).json({ message: 'Unauthorized: Invalid token' });

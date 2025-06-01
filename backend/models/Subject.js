@@ -5,7 +5,7 @@ const SubjectSchema = new mongoose.Schema({
   semester: Number,
   branch: String,
   subjectName: String,
-  // add other fields
+  
 });
 
 module.exports = mongoose.model('Subject', SubjectSchema);

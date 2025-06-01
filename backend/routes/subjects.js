@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Subject = require('../models/Subject');  // Adjust path & model name as per your project
-
+const Subject = require('../models/Subject');  
 router.get('/subjects', async (req, res) => {
   const { year, semester, branch } = req.query;
   if (!year || !semester || !branch) {
@@ -13,7 +12,7 @@ router.get('/subjects', async (req, res) => {
       year: Number(year),
       semester: Number(semester),
       branch
-    }).select('subjectName -_id'); // Adjust field names as per your schema
+    }).select('subjectName -_id'); 
 
     res.json({ subjects });
   } catch (err) {
