@@ -1,9 +1,10 @@
 import React from 'react';
-
+import akimage from '../assets/ak.jpg'
+import rau from '../assets/rauimage.jpg'
 function About() {
   return (
-    <div style={{ 
-      backgroundColor: '#2832C2', 
+    <div style={{
+       backgroundColor: '#2832C2', 
       minHeight: '100vh', 
       color: 'white', 
       padding: '40px', 
@@ -40,7 +41,71 @@ function About() {
         Join thousands of students who are already benefiting from our platform. Together, we are building a smarter, more connected learning community. Start exploring our resources today and take a confident step towards achieving your academic goals.
       </p>
 
-      
+      {/* Heading before profiles */}
+      <h2 style={{ marginTop: '60px', marginBottom: '20px', textAlign: 'center' }}>
+      "Team Lead" and "Contributor"
+      </h2>
+
+      {/* Two Profile Boxes */}
+      <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+        {/* Aditya's Box */}
+        <div style={{
+          backgroundColor: '#1e25a8',
+          padding: '20px',
+          borderRadius: '10px',
+          width: '250px',
+          boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+          textAlign: 'center'
+        }}>
+         <img
+  src={akimage}
+  alt="Aditya Kumar"
+  style={{
+    width: '100px',
+    height: '100px',
+    borderRadius: '50%',
+    objectFit: 'cover',
+    objectPosition: '50% 30%', // <--- this line centers the face
+    marginBottom: '10px',
+    border: '2px solid #fff'
+  }}
+/>
+
+          <h3>Aditya Kumar</h3>
+          <p>College: Lakshmi Narain College of Technology</p>
+          <a href="https://www.linkedin.com/in/aditya-kumar-a86989255/" target="_blank" rel="noopener noreferrer" style={{ color: '#FFD700' }}>
+            LinkedIn Profile
+          </a>
+        </div>
+
+        {/* Raushane's Box */}
+        <div style={{
+          backgroundColor: '#1e25a8',
+          padding: '20px',
+          borderRadius: '10px',
+          width: '250px',
+          boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+          textAlign: 'center'
+        }}>
+          <img
+            src={rau} // Replace with Raushane's image URL
+            alt="Raushan Kumar Choudhary"
+            style={{
+              width: '100px',
+              height: '100px',
+              borderRadius: '50%',
+              objectFit: 'cover',
+              marginBottom: '10px',
+              border: '2px solid #fff'
+            }}
+          />
+          <h3>Raushan Kumar Choudhary</h3>
+          <p>College: Lakshmi Narain College of Technology and Science</p>
+          <a href="https://www.linkedin.com/in/raushan-choudhary-521669180/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" style={{ color: '#FFD700' }}>
+            LinkedIn Profile
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
