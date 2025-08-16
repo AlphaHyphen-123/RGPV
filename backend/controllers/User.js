@@ -2,7 +2,7 @@ require('dotenv').config();
 const User = require("../models/User");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
+const sendEmail = require("../utils/sendEmail");
 const secretKey = process.env.JWT_SECRET;
 
 // SIGNUP CONTROLLER
@@ -35,6 +35,13 @@ const signup = async (req, res) => {
         college: newUser.college,
       },
     });
+
+     await sendEmail(
+      email,
+      "Welcome to Our App 🎉",
+      `Hello ${name}, welcome to our platform!`,
+      `<h3>Hello ${name}</h3><p>Welcome to our platform!</p>`
+    );
   } catch (error) {
     res.status(500).json({ message: "Server error: " + error.message });
   }
