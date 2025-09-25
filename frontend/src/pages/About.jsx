@@ -1,6 +1,6 @@
 import React from 'react';
 import akimage from '../assets/ak.jpg'
-import rau from '../assets/rauimage.jpg'
+import rau from '../assets/shivamimg.png'
 function About() {
   return (
     <div style={{
@@ -89,7 +89,7 @@ function About() {
         }}>
           <img
             src={rau} // Replace with Raushane's image URL
-            alt="Raushan Kumar Choudhary"
+            alt="SHIVAM SEN"
             style={{
               width: '100px',
               height: '100px',
@@ -99,9 +99,9 @@ function About() {
               border: '2px solid #fff'
             }}
           />
-          <h3>Raushan Kumar Choudhary</h3>
-          <p>College: Lakshmi Narain College of Technology and Science</p>
-          <a href="https://www.linkedin.com/in/raushan-choudhary-521669180/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" style={{ color: '#FFD700' }}>
+          <h3>SHIVAM SEN</h3>
+          <p>College: Bansal Group of Institutions</p>
+          <a href="https://www.linkedin.com/in/shivam-sen-607821281/" target="_blank" rel="noopener noreferrer" style={{ color: '#FFD700' }}>
             LinkedIn Profile
           </a>
         </div>
