@@ -48,7 +48,7 @@ function Navbar() {
       setSubjectsLoading(true);
       setSubjectsError(null);
 
-      fetch(`http://localhost:5000/api/subjects?year=${year}&semester=${semester}&branch=${branch}`)
+      fetch(`https://rgpvpathsala.onrender.com/api/subjects?year=${year}&semester=${semester}&branch=${branch}`)
         .then((res) => res.json())
         .then((data) => {
           setSubjects(Array.isArray(data.subjects) ? data.subjects : []);
@@ -99,7 +99,7 @@ function Navbar() {
       setResourcesLoading(true);
       setResourcesError(null);
 
-      fetch(`http://localhost:5000/api/resources?subject=${encodeURIComponent(subject)}&branch=${branch}`)
+      fetch(`https://rgpvpathsala.onrender.com/api/resources?subject=${encodeURIComponent(subject)}&branch=${branch}`)
 
         .then((res) => res.json())
         .then((data) => {
