@@ -13,9 +13,10 @@ connectDB();
 
 app.use(express.json());
 app.use(cors({
-  origin: 'https://rgpvpathsala_app.vercel.app',
+  origin: "https://rgpvpathsalaapp.vercel.app", // ✅ underscore hatao
   credentials: true,
 }));
+
 
 // ✅ API prefixes — sab perfect
 app.use("/api", userRoutes);
