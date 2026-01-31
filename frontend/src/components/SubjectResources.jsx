@@ -29,7 +29,7 @@ function SubjectResources() {
           setResources(data);
           setLoading(false);
         })
-        .catch(err => {
+        .catch(() => {
           setError('Failed to fetch resources');
           setLoading(false);
         });
@@ -40,11 +40,34 @@ function SubjectResources() {
 
   return (
     <div style={{ padding: 20, maxWidth: 800 }}>
+      <h1>hello pagal</h1>
       <h2>Find Resources</h2>
 
       <div style={{ display: 'flex', gap: 10, marginBottom: 20, flexWrap: 'wrap' }}>
-        {/* Semester, Branch, Subject selectors) */}
-        {/*  */}
+        <select value={semester} onChange={(e) => setSemester(e.target.value)}>
+          <option value="">Select Semester</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+        </select>
+        <select value={branch} onChange={(e) => setBranch(e.target.value)}>
+          <option value="">Select Branch</option>
+          <option value="CS">CS</option>
+          <option value="IT">IT</option>
+          <option value="EE">EE</option>
+          <option value="ME">ME</option>
+        </select>
+        <select value={subject} onChange={(e) => setSubject(e.target.value)}>
+          <option value="">Select Subject</option>
+          <option value="Mathematics">Mathematics</option>
+          <option value="Physics">Physics</option>
+          <option value="Chemistry">Chemistry</option>
+        </select>
       </div>
 
       {loading && <p>Loading resources...</p>}
