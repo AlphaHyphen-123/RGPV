@@ -1,6 +1,5 @@
 const express = require('express');
-const multer = require('multer');
-const fs = require('fs');
+const multer = require('multer')
 const SubjectResource = require('../models/SubjectResource');
 
 const router = express.Router();

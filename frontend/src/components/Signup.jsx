@@ -1,106 +1,107 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Loader from "./Loader";
 
 function Signup() {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
+    college: "",
     name: "",
     email: "",
     password: "",
-    college: "",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const handleChange = (e) => {
-    setFormData((prev) => ({
-      ...prev,
+    setFormData({
+      ...formData,
       [e.target.name]: e.target.value,
-    }));
+    });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL}/api/signup`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/signup`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await res.json();
 
       if (res.ok) {
-        alert("Signup successful!");
-        // Save full user info + token in localStorage
-        localStorage.setItem("user", JSON.stringify({ ...data.user, token: data.token }));
-
-        navigate("/"); // Redirect to dashboard or home page
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ ...data.user, token: data.token })
+        );
+        navigate("/");
       } else {
         alert(data.message || "Signup failed");
       }
-    } catch (err) {
-      console.error(err);
+    // eslint-disable-next-line no-unused-vars
+    } catch (_error) {
       alert("Something went wrong!");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <div className="container mt-5" style={{ maxWidth: "400px" }}>
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="mb-3">
-          <label>College</label>
+    <>
+      {loading && <Loader />}
+
+      <div className="container mt-5" style={{ maxWidth: "400px" }}>
+        <h2 className="text-center mb-4">Signup</h2>
+
+        <form onSubmit={handleSubmit}>
           <input
-            type="text"
-            className="form-control"
+            className="form-control mb-3"
             name="college"
-            value={formData.college}
+            placeholder="College"
             onChange={handleChange}
             required
           />
-        </div>
 
-        <div className="mb-3">
-          <label>Name</label>
           <input
-            type="text"
-            className="form-control"
+            className="form-control mb-3"
             name="name"
-            value={formData.name}
+            placeholder="Name"
             onChange={handleChange}
             required
           />
-        </div>
 
-        <div className="mb-3">
-          <label>Email</label>
           <input
-            type="email"
-            className="form-control"
+            className="form-control mb-3"
             name="email"
-            value={formData.email}
+            type="email"
+            placeholder="Email"
             onChange={handleChange}
             required
           />
-        </div>
 
-        <div className="mb-3">
-          <label>Password</label>
           <input
-            type="password"
-            className="form-control"
+            className="form-control mb-3"
             name="password"
-            value={formData.password}
+            type="password"
+            placeholder="Password"
             onChange={handleChange}
             required
           />
-        </div>
 
-        <button type="submit" className="btn btn-primary w-100">
-          Signup
-        </button>
-      </form>
-    </div>
+          <button className="btn btn-primary w-100" disabled={loading}>
+            Signup
+          </button>
+        </form>
+      </div>
+    </>
   );
 }
 
